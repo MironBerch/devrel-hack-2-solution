@@ -8,7 +8,7 @@ SECRET_KEY = environ.get('SECRET_KEY', default='not-secret-key')
 
 DEBUG = int(environ.get('DEBUG', default='1'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -91,9 +91,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Authentication
+
+AUTH_USER_MODEL = 'accounts.User'
+
+
 # Internationalization
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'Ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -120,7 +125,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Login redirect urls
 
 LOGIN_URL = 'signin'
-LOGIN_REDIRECT_URL = 'events_list'
 
 # Default primary key field type
 
@@ -134,6 +138,10 @@ EMAIL_HOST = environ.get('EMAIL_HOST')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD')
+
+# Celery
+
+CELERY_BROKER_URL = environ.get('CELERY_BROKER_URL')
 
 # INTERNAL IPS configuration
 
