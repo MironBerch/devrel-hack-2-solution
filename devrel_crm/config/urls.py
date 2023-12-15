@@ -9,6 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    
+    path('mailings/', include('mailings.urls')),
 ]
 
 if settings.DEBUG:

@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     # local
     'accounts.apps.AccountsConfig',
+    'mailings.apps.MailingsConfig',
 ]
 
 MIDDLEWARE = [
